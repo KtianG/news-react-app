@@ -1,0 +1,12 @@
+.App {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 500px;
+  height: 500px;
+
+  text-align: center;
+
+  border: 1px solid black;
+}
