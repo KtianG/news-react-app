@@ -1,3 +1,5 @@
 import css from "./MainContent.module.css";
 
-export {};
+export function MainContent() {
+  return <main className={css.main}></main>;
+}

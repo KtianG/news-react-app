@@ -1,0 +1,6 @@
+@import "../../styleVariables/colors.css";
+
+.main {
+  flex-grow: 1;
+  background-color: transparent;
+}

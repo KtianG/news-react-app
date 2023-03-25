@@ -1,0 +1,6 @@
+@import "../../styleVariables/colors.css";
+
+.footer {
+  background-color: var(--color-background-tertiary);
+  height: 100px;
+}

@@ -1,0 +1,6 @@
+@import "../../styleVariables/colors.css";
+
+.nav {
+  width: 265px;
+  background-color: var(--color-background-secondary);
+}
