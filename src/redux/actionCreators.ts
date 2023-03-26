@@ -1,4 +1,3 @@
-import { act } from "@testing-library/react";
 import * as actionTypes from "./actionTypes";
 
 export function setView(view: IView) {
