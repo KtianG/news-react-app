@@ -1,6 +1,7 @@
 @import "../../styleVariables/colors.css";
 
 .news {
+  position: relative;
   font-family: helvetica;
   color: var(--color-font-paragraph);
 
@@ -47,7 +48,7 @@
   margin: 0 20px 20px 20px;
 }
 .picture--grid {
-  max-height: 150px;
+  height: 150px;
   width: 265px;
   object-fit: cover;
 
@@ -60,6 +61,8 @@
 .description--grid {
   padding: 0 10px;
 
+  margin-bottom: 40px;
+
   text-align: left;
   font-size: var(--font-size-medium);
   color: var(--color-font-paragraph);
@@ -71,6 +74,9 @@
 
 .info--grid {
   composes: info;
+  position: absolute;
+  bottom: 5px;
+  width: 245px;
   display: flex;
   justify-content: space-between;
 }
@@ -79,5 +85,12 @@
   composes: info;
   display: flex;
   flex-direction: column;
+  min-width: 70px;
   justify-content: space-between;
+  text-align: right;
+}
+
+.author--grid {
+  text-align: left;
+  max-width: 180px;
 }

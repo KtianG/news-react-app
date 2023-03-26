@@ -1,6 +1,10 @@
 @import "../../styleVariables/colors.css";
 
 .footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
   background-color: var(--color-background-tertiary);
   height: 60px;
 }

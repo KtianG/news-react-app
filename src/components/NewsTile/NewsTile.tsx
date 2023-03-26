@@ -3,31 +3,40 @@ import balon from "../../images/balon.jpeg";
 
 type Props = {
   view: IView;
+  author: string;
+  title: string;
+  description: string;
+  content: string;
+  publishedAt: string;
+  urlToImage: string;
 };
 
-export const NewsTile: React.FC<Props> = ({ view }) => {
+export const NewsTile: React.FC<Props> = ({
+  view,
+  author,
+  title,
+  description,
+  content,
+  publishedAt,
+  urlToImage,
+}) => {
   const current_view = view.status;
+  const random_photo = "https://picsum.photos/265/150";
   return (
     <article className={css[`news--${current_view}`]}>
       <img
         className={css[`picture--${current_view}`]}
-        src={balon}
+        src={urlToImage ? urlToImage : random_photo}
         alt="balon"
       />
-      <p className={css.title}>
-        Tytuł na co najmniej trzy linijki w celach testowych, żeby było wiadomo
-        co może wyjść
-      </p>
+      <p className={css.title}>{title}</p>
 
-      <p className={css[`description--${current_view}`]}>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit rerum
-        voluptate saepe deleniti? Culpa fuga, beatae id ipsa architecto libero,
-        harum error asperiores nesciunt veniam iure magni, hic recusandae
-        provident.
-      </p>
+      <p className={css[`description--${current_view}`]}>{description}</p>
       <div className={css[`info--${current_view}`]}>
-        <div className={css.source}>source</div>{" "}
-        <div className={css.date}>Date</div>
+        <div className={css[`author--${current_view}`]}>
+          {author ? author : "unknown"}
+        </div>{" "}
+        <div>{publishedAt.substring(0, 10)}</div>
       </div>
     </article>
   );
