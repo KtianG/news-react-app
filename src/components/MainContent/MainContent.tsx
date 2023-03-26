@@ -15,7 +15,6 @@ export const MainContent: React.FC<Props> = ({ view }) => {
   useEffect(() => {
     getCountryNews("gb").then((articles) => {
       setNews(articles);
-      console.log(news);
     });
   }, []);
 

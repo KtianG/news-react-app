@@ -21,12 +21,12 @@ export const NewsTile: React.FC<Props> = ({
   urlToImage,
 }) => {
   const current_view = view.status;
-  const random_photo = "https://picsum.photos/265/150";
+
   return (
     <article className={css[`news--${current_view}`]}>
       <img
         className={css[`picture--${current_view}`]}
-        src={urlToImage ? urlToImage : random_photo}
+        src={urlToImage ? urlToImage : balon}
         alt="balon"
       />
       <p className={css.title}>{title}</p>
