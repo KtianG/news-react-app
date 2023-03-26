@@ -5,3 +5,17 @@ declare module "*.module.css" {
 
 declare module "*.png";
 declare module "*.jpeg";
+
+interface IView {
+  status: string;
+}
+type viewState = {
+  current_view: IView;
+};
+
+type viewAction = {
+  type: string;
+  view: IView;
+};
+
+type DispatchType = (args: viewAction) => viewAction;
