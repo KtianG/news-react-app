@@ -1,6 +1,33 @@
 @import "../../styleVariables/colors.css";
 
 .main {
+  display: inline-block;
   flex-grow: 1;
+
+  overflow-y: auto;
+
   background-color: transparent;
+}
+
+.title {
+  padding-top: 30px;
+  margin-bottom: 20px;
+
+  font-family: Raleway;
+  font-size: var(--font-size-header);
+  color: var(--color-font-header);
+}
+
+.grid {
+  display: flex;
+
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  margin-bottom: 40px;
+}
+
+.list {
+  padding: 10px;
 }
