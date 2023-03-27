@@ -1,5 +1,6 @@
 import axios from "axios";
 import data from "../data/apiKey.json";
+import dummyData from "../data/dummyData.json";
 
 const API_KEY: string = data.key;
 const BASE_URL: string = "https://newsapi.org/v2/top-headlines";
@@ -16,6 +17,7 @@ export async function getCountryNews(country_code: string) {
     return news.data.articles;
   } catch (error) {
     console.log(error);
+    return dummyData;
   }
 }
 
