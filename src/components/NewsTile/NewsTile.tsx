@@ -34,8 +34,8 @@ export const NewsTile: React.FC<Props> = ({
       <p className={css[`description--${current_view}`]}>{description}</p>
       <div className={css[`info--${current_view}`]}>
         <div className={css[`author--${current_view}`]}>
-          {author ? author : "unknown"}
-        </div>{" "}
+          {author ? author : "Unknown"}
+        </div>
         <div>{publishedAt.substring(0, 10)}</div>
       </div>
     </article>

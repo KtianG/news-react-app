@@ -2,18 +2,10 @@ import css from "./SideMenu.module.css";
 import countries from "../../data/countries.json";
 
 export function SideMenu() {
-  const global_icon = require(`../../images/flags/earth.png`);
-
   return (
     <nav className={css.nav}>
       <h2 className={css.title}>Countries</h2>
-      <ul className={css.list}>
-        <li className={css.item} key={"global"}>
-          <img className={css.flag} src={global_icon} alt="global" />
-          <span className={css.active}>Global</span>
-        </li>
-        {countries.map(generateCountryListItem)}
-      </ul>
+      <ul className={css.list}>{countries.map(generateCountryListItem)}</ul>
     </nav>
   );
 }

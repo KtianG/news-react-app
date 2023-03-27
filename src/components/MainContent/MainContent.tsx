@@ -13,7 +13,7 @@ export const MainContent: React.FC<Props> = ({ view }) => {
   const current_view: string = view.status;
 
   useEffect(() => {
-    getCountryNews("gb").then((articles) => {
+    getCountryNews("us").then((articles) => {
       setNews(articles);
     });
   }, []);
