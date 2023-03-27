@@ -7,9 +7,10 @@ import { useSelector, shallowEqual } from "react-redux";
 
 type Props = {
   country: string;
+  name: string;
 };
 
-export const MainContent: React.FC<Props> = ({ country }) => {
+export const MainContent: React.FC<Props> = ({ country, name }) => {
   const [news, setNews] = useState(0);
 
   const view: IView = useSelector(
@@ -25,7 +26,7 @@ export const MainContent: React.FC<Props> = ({ country }) => {
 
   return (
     <main className={css.main}>
-      <h1 className={css.title}>News from Country</h1>
+      <h1 className={css.title}>News from {name}</h1>
       <div className={css[view.status]}>
         {news === 0 ? <Spinner /> : generateNewsTiles(view, news)}
       </div>

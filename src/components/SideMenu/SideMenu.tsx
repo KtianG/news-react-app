@@ -15,6 +15,8 @@ export function SideMenu() {
 const StyledLink = styled(NavLink)`
   color: #020826;
   text-decoration: none;
+  padding: 0;
+  margin: 0;
 
   &.active {
     color: #f25042;
@@ -26,7 +28,7 @@ function generateCountryListItem(country: { name: string; id: string }) {
   const image = require(`../../images/flags/${id}.svg`);
   return (
     <li className={css.item} key={id}>
-      <StyledLink to={`/country/${name}`}>
+      <StyledLink className={css.link} to={`/country/${name}`}>
         <img className={css.flag} src={image} alt={name} />
         <p className={css.name}>{name}</p>
       </StyledLink>

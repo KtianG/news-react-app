@@ -33,6 +33,7 @@
 
   font-size: var(--font-size-small);
   color: var(--color-font-paragraph);
+  line-height: var(--font-size-small);
 }
 
 .news--grid {

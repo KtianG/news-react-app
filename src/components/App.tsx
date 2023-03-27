@@ -22,5 +22,11 @@ export default App;
 
 function generateCountryRoutes(country: { name: string; id: string }) {
   const { name, id } = country;
-  return <Route key={id} path={name} element={<MainContent country={id} />} />;
+  return (
+    <Route
+      key={id}
+      path={name}
+      element={<MainContent country={id} name={name} />}
+    />
+  );
 }
