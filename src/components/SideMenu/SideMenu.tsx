@@ -1,5 +1,7 @@
 import css from "./SideMenu.module.css";
 import countries from "../../data/countries.json";
+import { NavLink } from "react-router-dom";
+import styled from "styled-components";
 
 export function SideMenu() {
   return (
@@ -10,13 +12,24 @@ export function SideMenu() {
   );
 }
 
+const StyledLink = styled(NavLink)`
+  color: #020826;
+  text-decoration: none;
+
+  &.active {
+    color: #f25042;
+  }
+`;
+
 function generateCountryListItem(country: { name: string; id: string }) {
   const { name, id } = country;
   const image = require(`../../images/flags/${id}.svg`);
   return (
     <li className={css.item} key={id}>
-      <img className={css.flag} src={image} alt={name} />
-      <p className={css.name}>{name}</p>
+      <StyledLink to={`/country/${name}`}>
+        <img className={css.flag} src={image} alt={name} />
+        <p className={css.name}>{name}</p>
+      </StyledLink>
     </li>
   );
 }

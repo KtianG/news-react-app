@@ -1,4 +1,5 @@
 @import "../../styleVariables/colors.css";
+@import "../../styleVariables/fonts.css";
 
 .footer {
   position: fixed;

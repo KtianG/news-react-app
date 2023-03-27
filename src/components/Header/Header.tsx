@@ -1,34 +1,39 @@
 import * as React from "react";
+import { Link } from "react-router-dom";
 import { Dispatch } from "redux";
 import { useDispatch } from "react-redux";
+import { setView } from "../../redux/actionCreators";
+import { useSelector, shallowEqual } from "react-redux";
 
 import css from "./Header.module.css";
 import list from "../../images/icons/list.png";
 import tile from "../../images/icons/tile.png";
 import question from "../../images/icons/questionmark.png";
 
-type Props = {
-  view: IView;
-  setView: (view: IView) => void;
-};
-
-export const Header: React.FC<Props> = ({ view, setView }) => {
+export const Header: React.FC = () => {
   const dispatch: Dispatch<any> = useDispatch();
+
+  const view: IView = useSelector(
+    (state: viewState) => state.current_view,
+    shallowEqual
+  );
 
   const changeView = React.useCallback(
     (view: IView) => dispatch(setView(view)),
 
-    [dispatch, setView]
+    [dispatch]
   );
 
   return (
     <header className={css.header}>
       <div className={css.container}>
-        <div className={css.logo}>
-          <h2>
-            gn<span className={css.accent}>News</span>
-          </h2>
-        </div>
+        <Link className={css.link} to={`/Home`}>
+          <div className={css.logo}>
+            <h2>
+              gn<span className={css.accent}>News</span>
+            </h2>
+          </div>
+        </Link>
         <ul className={css.menu}>
           <li className={view.status === "list" ? css.active : css.item}>
             <img

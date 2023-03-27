@@ -1,37 +1,26 @@
 import * as React from "react";
-import css from "./App.module.css";
-import { Header } from "./Header/Header";
-import { Footer } from "./Footer/Footer";
-import { SideMenu } from "./SideMenu/SideMenu";
+import { Routes, Route } from "react-router-dom";
+import countries from "../data/countries.json";
+
+import { SharedLayout } from "./SharedLayout/SharedLayout";
+import { Home } from "./Home/Home";
+
 import { MainContent } from "./MainContent/MainContent";
 
-import { useSelector, shallowEqual, useDispatch } from "react-redux";
-import { setView } from "../redux/actionCreators";
-import { Dispatch } from "redux";
-
 const App: React.FC = () => {
-  const view: IView = useSelector(
-    (state: viewState) => state.current_view,
-    shallowEqual
-  );
-
-  const dispatch: Dispatch<any> = useDispatch();
-
-  const changeView = React.useCallback(
-    (view: IView) => dispatch(setView(view)),
-    [dispatch]
-  );
-
   return (
-    <div className={css.App}>
-      <Header view={view} setView={changeView} />
-      <div className={css.container}>
-        <SideMenu />
-        <MainContent view={view} />
-      </div>
-      <Footer />
-    </div>
+    <Routes>
+      <Route path="/" element={<SharedLayout />}>
+        <Route index element={<Home />} />
+        <Route path="country">{countries.map(generateCountryRoutes)}</Route>
+        <Route path="*" element={<Home />} />
+      </Route>
+    </Routes>
   );
 };
-
 export default App;
+
+function generateCountryRoutes(country: { name: string; id: string }) {
+  const { name, id } = country;
+  return <Route key={id} path={name} element={<MainContent country={id} />} />;
+}

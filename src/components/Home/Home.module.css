@@ -19,16 +19,11 @@
   color: var(--color-font-header);
 }
 
-.grid {
-  display: flex;
+.title {
+  padding-top: 30px;
+  margin-left: 20px;
 
-  gap: 20px;
-  flex-wrap: wrap;
-  justify-content: center;
-
-  margin-bottom: 40px;
-}
-
-.list {
-  padding: 10px;
+  font-family: Raleway;
+  font-size: var(--font-size-header);
+  color: var(--color-font-header);
 }

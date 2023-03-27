@@ -3,25 +3,30 @@ import css from "./MainContent.module.css";
 import { NewsTile } from "../NewsTile/NewsTile";
 import { Spinner } from "../Spinner/Spinner";
 import { getCountryNews } from "../../services/api";
+import { useSelector, shallowEqual } from "react-redux";
 
 type Props = {
-  view: IView;
+  country: string;
 };
 
-export const MainContent: React.FC<Props> = ({ view }) => {
+export const MainContent: React.FC<Props> = ({ country }) => {
   const [news, setNews] = useState(0);
-  const current_view: string = view.status;
+
+  const view: IView = useSelector(
+    (state: viewState) => state.current_view,
+    shallowEqual
+  );
 
   useEffect(() => {
-    getCountryNews("us").then((articles) => {
+    getCountryNews(country).then((articles) => {
       setNews(articles);
     });
-  }, []);
+  }, [country]);
 
   return (
     <main className={css.main}>
       <h1 className={css.title}>News from Country</h1>
-      <div className={css[current_view]}>
+      <div className={css[view.status]}>
         {news === 0 ? <Spinner /> : generateNewsTiles(view, news)}
       </div>
     </main>

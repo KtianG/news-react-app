@@ -33,6 +33,10 @@
   font-size: var(--font-size-logo);
 }
 
+.link {
+  text-decoration: none;
+}
+
 .accent {
   color: var(--color-logo-primary);
 }
