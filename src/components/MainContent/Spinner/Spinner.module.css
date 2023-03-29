@@ -1,5 +1,3 @@
-@import "../../styleVariables/colors.css";
-
 .lds-spinner {
   color: var(--color-background-secondary);
   display: inline-block;

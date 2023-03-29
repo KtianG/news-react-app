@@ -1,6 +1,3 @@
-@import "../../styleVariables/colors.css";
-@import "../../styleVariables/fonts.css";
-
 .header {
   width: 100%;
   background-color: var(--color-background-tertiary);

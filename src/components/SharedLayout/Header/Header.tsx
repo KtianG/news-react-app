@@ -2,30 +2,21 @@ import * as React from "react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import Modal from "react-modal";
-import { Dispatch } from "redux";
-import { useDispatch } from "react-redux";
-import { setView } from "../../redux/actionCreators";
-import { useSelector, shallowEqual } from "react-redux";
+
+import type { RootState } from "../../../reduxtkt/store";
+import { useSelector, useDispatch } from "react-redux";
+import { changeView } from "../../../reduxtkt/view/viewSlice";
 
 import css from "./Header.module.css";
-import list from "../../images/icons/list.png";
-import tile from "../../images/icons/tile.png";
-import question from "../../images/icons/questionmark.png";
+import list from "../../../images/icons/list.png";
+import tile from "../../../images/icons/tile.png";
+import question from "../../../images/icons/questionmark.png";
 
 export const Header: React.FC = () => {
   const [modalState, setModalState] = useState(false);
-  const dispatch: Dispatch<any> = useDispatch();
 
-  const view: IView = useSelector(
-    (state: viewState) => state.current_view,
-    shallowEqual
-  );
-
-  const changeView = React.useCallback(
-    (view: IView) => dispatch(setView(view)),
-
-    [dispatch]
-  );
+  const view = useSelector((state: RootState) => state.view);
+  const dispatch = useDispatch();
 
   const openModal: any = (article: Article) => {
     setModalState(true);
@@ -46,20 +37,20 @@ export const Header: React.FC = () => {
           </div>
         </Link>
         <ul className={css.menu}>
-          <li className={view.status === "list" ? css.active : css.item}>
+          <li className={view.value === "list" ? css.active : css.item}>
             <img
               src={list}
               className={css.icon}
               alt="change view to list"
-              onClick={() => changeView({ status: "list" })}
+              onClick={() => dispatch(changeView("list"))}
             />
           </li>
-          <li className={view.status === "grid" ? css.active : css.item}>
+          <li className={view.value === "grid" ? css.active : css.item}>
             <img
               src={tile}
               className={css.icon}
               alt="change view to grid"
-              onClick={() => changeView({ status: "grid" })}
+              onClick={() => dispatch(changeView("grid"))}
             />
           </li>
           <li className={css.item} onClick={openModal}>
@@ -83,10 +74,10 @@ export const Header: React.FC = () => {
 
           <h2 className={css.title}>Doświadczenia w tworzeniu aplikacji</h2>
           <p>
-            <b>Największą trudność</b> sprawiło stworzenie projektu. Ciężko było
+            <b>Największą trudność</b> sprawił sam wygląd projektu. Ciężko było
             stworzyć coś z odpowiednim wyglądem. By sobie w tym dopomóc
-            stworzyłem w pierwszej kolejności makietę w figmie by mieć chociaż
-            ogólne pojęcie jak aplikacja będzie wyglądać.
+            stworzyłem w pierwszej kolejności makietę w figmie by mieć podgląd
+            na docelowy wygląd aplikacji.
           </p>
 
           <p>

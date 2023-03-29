@@ -1,14 +1,14 @@
 import css from "./NewsTile.module.css";
-import balon from "../../images/balon.jpeg";
+import balon from "../../../images/balon.jpeg";
 
 type Props = {
-  view: IView;
+  view: string;
   article: Article;
   open: (article: Article) => void;
 };
 
 export const NewsTile: React.FC<Props> = ({ view, article, open }) => {
-  const current_view = view.status;
+  const current_view = view;
   const { source, title, description, publishedAt, urlToImage } = article;
 
   return (

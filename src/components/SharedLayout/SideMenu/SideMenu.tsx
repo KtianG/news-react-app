@@ -1,5 +1,5 @@
 import css from "./SideMenu.module.css";
-import countries from "../../data/countries.json";
+import countries from "../../../data/countries.json";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
@@ -29,7 +29,7 @@ const StyledLink = styled(NavLink)`
 
 function generateCountryListItem(country: { name: string; id: string }) {
   const { name, id } = country;
-  const image = require(`../../images/flags/${id}.svg`);
+  const image = require(`../../../images/flags/${id}.svg`);
   return (
     <li className={css.item} key={id}>
       <StyledLink className={css.link} to={`/country/${name}`}>

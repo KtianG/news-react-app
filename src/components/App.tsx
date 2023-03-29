@@ -1,10 +1,10 @@
 import * as React from "react";
 import { Routes, Route } from "react-router-dom";
+
 import countries from "../data/countries.json";
 
 import { SharedLayout } from "./SharedLayout/SharedLayout";
 import { Home } from "./Home/Home";
-
 import { MainContent } from "./MainContent/MainContent";
 
 const App: React.FC = () => {
