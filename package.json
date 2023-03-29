@@ -1,8 +1,8 @@
 {
-  "name": "gnnews",
+  "name": "news-react-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://KtianG.github.io/gnNews/",
+  "homepage": "https://KtianG.github.io/news-react-app/",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.3",
     "@testing-library/jest-dom": "^5.16.5",
