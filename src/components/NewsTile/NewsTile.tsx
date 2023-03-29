@@ -3,27 +3,19 @@ import balon from "../../images/balon.jpeg";
 
 type Props = {
   view: IView;
-  author: string;
-  title: string;
-  description: string;
-  content: string;
-  publishedAt: string;
-  urlToImage: string;
+  article: Article;
+  open: (article: Article) => void;
 };
 
-export const NewsTile: React.FC<Props> = ({
-  view,
-  author,
-  title,
-  description,
-  content,
-  publishedAt,
-  urlToImage,
-}) => {
+export const NewsTile: React.FC<Props> = ({ view, article, open }) => {
   const current_view = view.status;
+  const { source, title, description, publishedAt, urlToImage } = article;
 
   return (
-    <article className={css[`news--${current_view}`]}>
+    <article
+      onClick={() => open(article)}
+      className={css[`news--${current_view}`]}
+    >
       <img
         className={css[`picture--${current_view}`]}
         src={urlToImage ? urlToImage : balon}
@@ -34,7 +26,7 @@ export const NewsTile: React.FC<Props> = ({
       <p className={css[`description--${current_view}`]}>{description}</p>
       <div className={css[`info--${current_view}`]}>
         <div className={css[`author--${current_view}`]}>
-          {author ? author : "Unknown"}
+          {source.name ? source.name : "Unknown"}
         </div>
         <div>{publishedAt.substring(0, 10)}</div>
       </div>
