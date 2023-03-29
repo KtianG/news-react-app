@@ -108,3 +108,15 @@
   text-align: right;
   padding-top: 2px;
 }
+
+@media screen and (max-width: 360px) {
+  .news--grid {
+    width: 200px;
+  }
+  .picture--grid {
+    width: 200px;
+  }
+  .info--grid {
+    width: 180px;
+  }
+}

@@ -27,8 +27,6 @@
 }
 
 .clock {
-  width: 265px;
-
   font-family: Roboto;
   font-size: var(--font-size-header);
 }
@@ -36,4 +34,20 @@
 .info {
   font-size: var(--font-size-small);
   padding-right: 40px;
+}
+
+@media screen and (max-width: 600px) {
+  .clock {
+    padding-left: 20px;
+  }
+
+  .info {
+    padding-right: 10px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .clock {
+    width: 265px;
+  }
 }

@@ -8,7 +8,7 @@ export function Footer() {
         <div className={css.clock}>
           <Clock />
         </div>
-        <div className={css.info}>Found xxxx relevant news</div>
+        <div className={css.info}>Found 20 relevant news</div>
       </div>
     </footer>
   );

@@ -21,6 +21,10 @@ const StyledLink = styled(NavLink)`
   &.active {
     color: #f25042;
   }
+
+  &.active > img {
+    box-shadow: 1px 1px 5px #f25042, -1px -1px 5px #f25042;
+  }
 `;
 
 function generateCountryListItem(country: { name: string; id: string }) {

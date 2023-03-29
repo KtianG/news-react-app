@@ -23,12 +23,16 @@
 .item {
   display: flex;
   justify-content: flex-start;
+
   margin-bottom: 20px;
+  width: 100%;
 }
 
 .link {
   display: flex;
   justify-content: flex-start;
+  width: 100%;
+  text-align: left;
 }
 
 .flag {
@@ -41,9 +45,6 @@
 .name {
   display: inline;
   margin: 0 auto;
-
-  text-align: left;
-  vertical-align: middle;
 
   line-height: 30px;
   font-size: var(--font-size-nav);
@@ -67,19 +68,27 @@
   cursor: default;
 }
 
-@media screen and (max-width: 600px){
-  .title{
-    display:none
+@media screen and (max-width: 600px) {
+  .nav {
+    min-width: 60px;
   }
-  
-  .name{
-    display:none
+  .title {
+    display: none;
+  }
+
+  .list {
+    padding-top: 88px;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .name {
+    display: none;
   }
 }
 
-@media screen and (min-width: 600px){
-  .nav{
+@media screen and (min-width: 600px) {
+  .nav {
     min-width: 265px;
   }
 }
-

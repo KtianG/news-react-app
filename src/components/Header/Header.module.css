@@ -2,6 +2,7 @@
 @import "../../styleVariables/fonts.css";
 
 .header {
+  width: 100%;
   background-color: var(--color-background-tertiary);
   height: 60px;
 }
@@ -19,7 +20,6 @@
 }
 
 .logo {
-  width: 265px;
   justify-content: center;
   cursor: pointer;
 }
@@ -73,4 +73,87 @@
 .active {
   display: none;
   margin: 0;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  max-height: 90%;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  background-color: var(--color-background-primary);
+  border-radius: 5px;
+  box-shadow: 2px 2px 20px var(--color-font-paragraph);
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.modal-container {
+  position: relative;
+  padding: 20px 20px;
+
+  color: var(--color-font-paragraph);
+}
+.button {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+
+  font-weight: 700;
+  font-size: 20;
+  background: none;
+  border: none;
+  border-radius: 50%;
+  transition: 250ms ease;
+  transition-property: scale;
+}
+
+.button:hover {
+  color: var(--color-active);
+  scale: 1.2;
+}
+
+.title {
+  font-size: var(--font-size-big);
+  line-height: 20px;
+  color: var(--color-font-header);
+  margin-top: 0px;
+}
+
+@media screen and (max-width: 600px) {
+  .logo {
+    padding-left: 20px;
+  }
+
+  .menu {
+    padding-right: 10px;
+  }
+
+  .item {
+    margin-left: 10px;
+  }
+
+  .item:not(:last-child) {
+    margin-right: 10px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .logo {
+    width: 265px;
+  }
 }

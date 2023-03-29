@@ -1,4 +1,6 @@
 @import-normalize; /* bring in normalize.css styles */
+@import "./styleVariables/colors.css";
+@import "./styleVariables/fonts.css";
 
 body {
   margin: 0;
