@@ -2,8 +2,6 @@
 @import "../../styleVariables/fonts.css";
 
 .nav {
-  min-width: 265px;
-
   background-color: var(--color-background-secondary);
   overflow-y: auto;
 }
@@ -68,3 +66,21 @@
   transform: scale(1);
   cursor: default;
 }
+
+@media max-width: 600px{
+  .title{
+    display:none
+  }
+  
+  .name{
+    display:none
+  }
+  
+}
+
+@media min-width: 600px{
+  .nav{
+    min-width: 265px;
+  }
+}
+
