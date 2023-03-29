@@ -18,7 +18,7 @@ export const Header: React.FC = () => {
   const view = useSelector((state: RootState) => state.view);
   const dispatch = useDispatch();
 
-  const openModal: any = (article: Article) => {
+  const openModal: any = () => {
     setModalState(true);
   };
 
